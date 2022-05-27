@@ -1,8 +1,6 @@
-import './style.css'
+import { fromEvent } from "rxjs";
 
-const app = document.querySelector<HTMLDivElement>('#app')!
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+const buttonElement = document.getElementById('button') as HTMLButtonElement;
+
+fromEvent(buttonElement,'click').subscribe(()=> console.log('clicked'))
